@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Spline+Sans+Mono&family=Staatliches&display=swap" rel="stylesheet">
-    <meta name="description" content="Le zoo offre une expérience unique pour toute la famille. Venez découvrir tous nos animaux fascinant et apprendre sur leur habita naturel.">
+    <meta name="description" content="Venez découvrir notre immense gamme de confiserie, chez nous au 7 rue des amis où vous pourrez les confectionner ainsi que les personnaliser !">
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
@@ -66,14 +66,14 @@
                 var largeurElement1 = btn1.offsetWidth;
                 var largeurElement2 = btn2.offsetWidth;
                 btn1.classList.add("custom-width");
-                btn1.style.setProperty('--custom-width', largeurElement1 + 'px');
+                btn1.style.setProperty('--custom-width', largeurElement1 + 4 + 'px');
 
                 btn2.classList.add("custom-width");
-                btn2.style.setProperty('--custom-width', largeurElement2 + 'px');
+                btn2.style.setProperty('--custom-width', largeurElement2 + + 4 + 'px');
             }
         }
         window.addEventListener("resize", handleResize);
-        handleResize();
+        window.addEventListener("load", handleResize);
     </script>
 </body>
 </html>

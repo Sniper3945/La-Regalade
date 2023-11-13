@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Lollipop_favicon_.ico" type="image/x-icon">
+    <title>La Regalade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Spline+Sans+Mono&family=Staatliches&display=swap" rel="stylesheet">
+    <meta name="description" content="Le zoo offre une expérience unique pour toute la famille. Venez découvrir tous nos animaux fascinant et apprendre sur leur habita naturel.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <div class="main">
+        <div class="top">
+            <div class="top-title">
+                <h1>La Regalade</h1>
+            </div>
+            <div class="top-navbar">
+                <ul class="nav">
+                    <li><a href="#" class="nav-lia" >Acceuil</a></li>
+                    <li>
+                        <a href="#" class="no-underline">Gamme Disponible
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
+                                <path d="M1 2L6.26056 9.10312" stroke="black"   stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 2L6.49999 9.32457" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                        <ul class="drop-down">
+                            <li><a href="#" class="clc">Dragées</a></li>
+                            <li><a href="#" class="clc">Chocolat</a></li>
+                            <li><a href="#" class="clc">Bonbons</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-lia">Commande</a></li>
+                    <li><a href="#" class="nav-lia">Contactez-Nous</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="arrow-1_container" id="rotatingImage">
+                <img src="img/circle.png" alt="circle-text"></div>
+            <div class="arrow-2_container" id="rotatingImage">
+                <img src="img/circle.png" alt="circle-text"></div>
+            <div class="img-container">
+                <img src="img/Lollipop.png" alt="Lollipop-picture"></div>
+        </div>
+        <div class="text-container">
+            <p>Venez découvrir notre immense gamme de confiserie, chez nous au <span id="address">7 rue des amis</span> où vous pourrez les confectionner ainsi que les personnaliser !</p>
+        </div>
+        <div class="footer">
+            <ul>
+                <div class="boule"></div>
+                <li><a href="#" id="insta">Instagram</a></li>
+                <li>|</li>
+                <li><a href="#" id="Face">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function handleResize() {
+            const btn1 = document.getElementById("insta");
+            const btn2 = document.getElementById("Face");
+            if (btn1 && btn2) {
+                var largeurElement1 = btn1.offsetWidth;
+                var largeurElement2 = btn2.offsetWidth;
+                btn1.classList.add("custom-width");
+                btn1.style.setProperty('--custom-width', largeurElement1 + 'px');
+
+                btn2.classList.add("custom-width");
+                btn2.style.setProperty('--custom-width', largeurElement2 + 'px');
+            }
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+    </script>
+</body>
+</html>

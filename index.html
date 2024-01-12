@@ -28,9 +28,14 @@
                             </svg>
                         </a>
                         <ul class="drop-down">
-                            <li><a href="#" class="clc">Dragées</a></li>
-                            <li><a href="#" class="clc">Chocolat</a></li>
-                            <li><a href="#" class="clc">Bonbons</a></li>
+                            <li class="left">
+                                    <a href="#" class="clc" id="Dragées">Dragées</a>
+                                    <a href="#" class="clc" id="Chocolat">Chocolat</a>
+                                    <a href="#" class="clc" id="Bonbons">Bonbons</a>
+                            </li>
+                            <li class="right">
+                                <img src="" alt="" class="dd-pic">
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#" class="nav-lia">Commande</a></li>
@@ -62,16 +67,57 @@
         function handleResize() {
             const btn1 = document.getElementById("insta");
             const btn2 = document.getElementById("Face");
+            const clc = document.getElementsByClassName("clc")
+            console.log(clc)
             if (btn1 && btn2) {
                 var largeurElement1 = btn1.offsetWidth;
                 var largeurElement2 = btn2.offsetWidth;
                 btn1.classList.add("custom-width");
                 btn1.style.setProperty('--custom-width', largeurElement1 + 4 + 'px');
-
                 btn2.classList.add("custom-width");
-                btn2.style.setProperty('--custom-width', largeurElement2 + + 4 + 'px');
+                btn2.style.setProperty('--custom-width', largeurElement2 +  4 + 'px');
+            }
+            const elements = document.getElementsByClassName("clc");
+            if (elements.length > 0) {
+                for (let i = 0; i < elements.length; i++) {
+                    const element = elements[i];
+                    element.addEventListener("mouseenter", function() {
+                        var largeurElement = element.offsetWidth;
+                        element.style.setProperty('--custo-width', largeurElement + 2 - 50 + 'px');
+                    });
+                }
             }
         }
+            document.addEventListener('DOMContentLoaded', function() {
+            var clcElements = document.querySelectorAll('.clc');
+            var dropDownElement = document.querySelector('.drop-down');
+            var img = document.querySelector(".dd-pic")
+
+            if (clcElements.length > 0 && dropDownElement) {
+                clcElements.forEach(function(clcElement) {
+                    clcElement.addEventListener('mouseover', function() {
+                        dropDownElement.style.width = '191%';
+                        if (clcElement.id == "Dragées"){
+                            img.style.display="block"
+                            img.src="img/dragée.jpg"
+                        }
+                        else if (clcElement.id == "Chocolat"){
+                            img.style.display="block"
+                            img.src="img/chocolat.jpg"
+                        }
+                        else if (clcElement.id == "Bonbons"){
+                            img.style.display="block"
+                            img.src="img/bonbon.jpg"
+                        }
+                    });
+
+                    clcElement.addEventListener('mouseout', function() {
+                        dropDownElement.style.width = '100%';
+                        img.style.display="none"
+                    });
+                });
+            }
+        });
         window.addEventListener("resize", handleResize);
         window.addEventListener("load", handleResize);
     </script>
